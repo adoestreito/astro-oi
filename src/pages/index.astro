@@ -1,6 +1,10 @@
 ---
 import Welcome from "../components/Welcome.astro";
 import Social from "../components/Social.astro";
+import Banner from "../components/Banner.astro";
+import Hero from "../components/Hero.astro";
+import YoutubeShortEmbeded from "../components/YoutubeShortEmbeded.astro";
+import SpotifyEmbeded from "../components/SpotifyEmbeded.astro";
 import Layout from "../layouts/Layout.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -8,5 +12,28 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
+	<Banner />
+	<Hero />
+	<div class="grid">
+		<div class="">
+			<YoutubeShortEmbeded />
+		</div>
+		<div class="grid-element">
+			<SpotifyEmbeded />
+		</div>
+	</div>
 	<Social />
+
+	<style>
+		.grid {
+			display: flex;
+			justify-content: space-around;
+			align-items: stretch;
+			margin-top: 3vh;
+		}
+
+		.grid-element {
+			flex-grow: 1;
+		}
+	</style>
 </Layout>
