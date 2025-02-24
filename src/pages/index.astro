@@ -16,9 +16,11 @@ import Layout from "../layouts/Layout.astro";
 	<Hero />
 	<div class="grid">
 		<div class="">
+			<h1>Lo último</h1>
 			<YoutubeShortEmbeded />
 		</div>
 		<div class="grid-element">
+			<h1>Escucha</h1>
 			<SpotifyEmbeded />
 		</div>
 	</div>
@@ -30,6 +32,28 @@ import Layout from "../layouts/Layout.astro";
 			justify-content: space-around;
 			align-items: stretch;
 			margin-top: 3vh;
+			gap: 1rem; /* Adds spacing between elements */
+		}
+
+		/* Make the grid collapse into a column and ensure everything is centered */
+		@media (max-width: 768px) {
+			.grid {
+				flex-direction: column;
+				align-items: center; /* Centers child elements */
+				justify-content: center; /* Centers them vertically */
+				width: 100%;
+			}
+
+			.grid > div {
+				display: flex; /* Ensures inner content is centered */
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				width: 100%; /* Full width */
+				max-width: 500px; /* Optional: Prevents elements from being too wide */
+				margin: 0 auto; /* Centers horizontally */
+				text-align: center; /* Centers text inside */
+			}
 		}
 
 		.grid-element {
