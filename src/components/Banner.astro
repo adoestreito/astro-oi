@@ -3,7 +3,7 @@
 ---
 
 <div class="banner-container">
-    <img src="/plane-icon.png" alt="" width="100" />
+    <img class="hidden" src="/plane-icon.png" alt="" width="100" />
     <h1>Nuevo single, Umbra ya en Youtube!</h1>
 </div>
 
@@ -11,24 +11,52 @@
     .banner-container {
         display: flex;
         height: 5vh;
+        padding: 0 1rem; /* Adds some space around content */
         color: white;
         background: radial-gradient(
             circle,
             rgba(109, 71, 152, 0.5),
             rgba(0, 0, 0, 0.5)
         );
-        margin: 0;
         align-items: center;
         justify-content: center;
+        gap: 0.5rem; /* Adds spacing between image and text */
     }
 
     .banner-container img {
-        align-self: self-start;
+        width: 8vw; /* Makes the image responsive */
+        max-width: 100px; /* Prevents it from growing too large */
+        height: auto;
     }
 
     .banner-container h1 {
         margin: 0;
         flex-grow: 1;
         text-align: center;
+        font-size: 2vw; /* Makes the font responsive */
+        max-font-size: 24px; /* Prevents it from getting too large */
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+        .banner-container {
+            height: auto;
+            padding: 0.5rem;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .banner-container img {
+            width: 15vw;
+            max-width: 80px;
+        }
+
+        .banner-container h1 {
+            font-size: 4vw;
+        }
+
+        .hidden {
+            display: none;
+        }
     }
 </style>
