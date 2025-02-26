@@ -3,9 +3,13 @@ import Welcome from "../components/Welcome.astro";
 import Social from "../components/Social.astro";
 import Banner from "../components/Banner.astro";
 import Hero from "../components/Hero.astro";
+import ImageGlitch from "../components/ImageGlitch.astro";
 import YoutubeShortEmbeded from "../components/YoutubeShortEmbeded.astro";
 import SpotifyEmbeded from "../components/SpotifyEmbeded.astro";
 import Layout from "../layouts/Layout.astro";
+
+const image1 = "/ocaso-img-1.png";
+const image2 = "/ocaso-img-2.png";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -24,6 +28,8 @@ import Layout from "../layouts/Layout.astro";
 			<SpotifyEmbeded />
 		</div>
 	</div>
+	<!-- <ImageGlitch image={image1} />
+	<ImageGlitch image={image2} /> -->
 	<Social />
 
 	<style>
@@ -57,7 +63,7 @@ import Layout from "../layouts/Layout.astro";
 		}
 
 		.grid-element {
-			flex-grow: 1;
+			flex-grow: 0.7;
 		}
 	</style>
 </Layout>

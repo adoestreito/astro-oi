@@ -1,0 +1,10 @@
+---
+import "../styles/glitch.scss";
+const { image } = Astro.props;
+---
+
+<div class="glitch" style={`background-image: url('${image}')`}>
+    <div class="channel r"></div>
+    <div class="channel g"></div>
+    <div class="channel b"></div>
+</div>
