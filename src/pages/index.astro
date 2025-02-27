@@ -6,10 +6,15 @@ import Hero from "../components/Hero.astro";
 import ImageGlitch from "../components/ImageGlitch.astro";
 import YoutubeShortEmbeded from "../components/YoutubeShortEmbeded.astro";
 import SpotifyEmbeded from "../components/SpotifyEmbeded.astro";
+import VideoGlitch from "../components/VideoGlitch.astro";
 import Layout from "../layouts/Layout.astro";
 
 const image1 = "/ocaso-img-1.png";
 const image2 = "/ocaso-img-2.png";
+const imagetest = "/ocaso-img-test.png";
+
+const video1 = "De8X5RvvUBw?start=0";
+const video2 = "z6lu-hvbqZc?si=cYwEcdVTyQzoOIyQ";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -18,27 +23,59 @@ const image2 = "/ocaso-img-2.png";
 <Layout>
 	<Banner />
 	<Hero />
+	<Social />
 	<div class="grid">
-		<div class="">
-			<h1>Lo último</h1>
-			<YoutubeShortEmbeded />
+		<div class="row">
+			<div class="main-element">
+				<YoutubeShortEmbeded />
+			</div>
+			<div class="secondary-element">
+				<VideoGlitch video={video1} />
+			</div>
 		</div>
-		<div class="grid-element">
-			<h1>Escucha</h1>
-			<SpotifyEmbeded />
+		<div class="row">
+			<div class="secondary-element">
+				<VideoGlitch video={video2} />
+			</div>
+			<div class="main-element">
+				<SpotifyEmbeded />
+			</div>
 		</div>
 	</div>
 	<!-- <ImageGlitch image={image1} />
 	<ImageGlitch image={image2} /> -->
+	<h1>Más de Ocaso Ilusión:</h1>
 	<Social />
 
 	<style>
 		.grid {
 			display: flex;
+			flex-direction: column;
 			justify-content: space-around;
 			align-items: stretch;
-			margin-top: 3vh;
+			margin-top: 2vh;
 			gap: 1rem; /* Adds spacing between elements */
+		}
+
+		.row {
+			display: flex;
+			flex-direction: row;
+
+			gap: 1rem;
+			justify-content: space-around;
+			width: 100%;
+		}
+
+		.main-element {
+			flex-grow: 3;
+			flex-basis: 0;
+			padding: 0 2rem;
+		}
+
+		.secondary-element {
+			flex-grow: 1;
+			flex-basis: 0;
+			align-self: center;
 		}
 
 		/* Make the grid collapse into a column and ensure everything is centered */
@@ -50,20 +87,14 @@ const image2 = "/ocaso-img-2.png";
 				width: 100%;
 			}
 
-			.grid > div {
-				display: flex; /* Ensures inner content is centered */
-				flex-direction: column;
-				justify-content: center;
-				align-items: center;
-				width: 100%; /* Full width */
-				max-width: 500px; /* Optional: Prevents elements from being too wide */
-				margin: 0 auto; /* Centers horizontally */
-				text-align: center; /* Centers text inside */
+			.secondary-element {
+				display: none;
 			}
 		}
 
-		.grid-element {
-			flex-grow: 0.7;
+		h1 {
+			text-align: center;
+			margin-bottom: 0.5rem;
 		}
 	</style>
 </Layout>

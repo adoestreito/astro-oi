@@ -1,68 +1,16 @@
-@function rand($min, $max) {
-  @return random() * ($max - $min)+$min;
-}
-
-$animation-duration: 3s;
-$glitch-duration: 20%;
-$glitch-frequency: 10;
-$glitch-interval: $glitch-duration / $glitch-frequency;
-
-@mixin rgb-shift($name) {
-  @keyframes rgb-shift-#{$name} {
-    @for $i from 0 to $glitch-frequency {
-      #{$i * $glitch-interval} {
-        transform: translate(#{rand(-2, 2) * 1%},
-          #{rand(-0.5, 0.5) * 1%});
-      }
-    }
-
-    #{$glitch-duration},
-    100% {
-      transform: none;
-    }
-  }
-
-  animation: rgb-shift-#{$name} $animation-duration steps(1, jump-end) infinite alternate both;
-}
-
-@mixin glitch($name) {
-  @keyframes glitch-#{$name} {
-    @for $i from 0 to $glitch-frequency {
-      $left: 0%;
-      $right: 100%;
-      $top: rand(0, 90) * 1%;
-      $bottom: $top + rand(1, 10) * 1%;
-
-      #{$i * $glitch-interval} {
-        clip-path: polygon($left $top,
-            $right $top,
-            $right $bottom,
-            $left $bottom );
-        transform: translate(#{rand(-8, 8) * 1%},
-          #{rand(-0.5, 0.5) * 1%});
-      }
-    }
-
-    #{$glitch-duration},
-    100% {
-      clip-path: none;
-      transform: none;
-    }
-  }
-
-  animation: glitch-#{$name} $animation-duration linear infinite alternate both;
-}
-
-body {
-  margin: 0;
-}
-
 .glitch {
   background: #000 no-repeat center;
-  background-size: 0;
-  height: 100vh;
+  background-size: cover;
+  height: 50vh;
+  width: 100%;
   position: relative;
   overflow: hidden;
+
+  // Generate a random delay using CSS variables
+  --glitch-delay: calc(var(--random-seed) * 5s);
+  /* 0s - 5s */
+  --shift-delay: calc(var(--random-seed) * 3s);
+  /* 0s - 3s */
 
   &::before,
   &::after,
@@ -77,20 +25,21 @@ body {
   }
 
   &::before {
-    @include glitch(before);
     content: "";
+    animation: glitch-effect 3s linear infinite alternate;
+    animation-delay: var(--glitch-delay);
   }
 
   &::after {
-    @include glitch(after);
     content: "";
+    animation: glitch-effect 3s linear infinite alternate;
+    animation-delay: var(--glitch-delay);
   }
 
   .channel {
     mix-blend-mode: screen;
 
     &::before {
-      bottom: 0;
       content: "";
       display: block;
       mix-blend-mode: multiply;
@@ -98,11 +47,13 @@ body {
       left: 0;
       right: 0;
       top: 0;
+      bottom: 0;
     }
   }
 
   .r {
-    @include rgb-shift(r);
+    animation: rgb-shift 3s steps(1, jump-end) infinite alternate both;
+    animation-delay: var(--shift-delay);
 
     &::before {
       background: #f00;
@@ -110,7 +61,8 @@ body {
   }
 
   .g {
-    @include rgb-shift(g);
+    animation: rgb-shift 3s steps(1, jump-end) infinite alternate both;
+    animation-delay: var(--shift-delay);
 
     &::before {
       background: #0f0;
@@ -118,10 +70,58 @@ body {
   }
 
   .b {
-    @include rgb-shift(b);
+    animation: rgb-shift 3s steps(1, jump-end) infinite alternate both;
+    animation-delay: var(--shift-delay);
 
     &::before {
       background: #00f;
     }
+  }
+}
+
+// Keyframe animations
+@keyframes glitch-effect {
+  0% {
+    clip-path: inset(2% 0 96% 0);
+    transform: translateX(-5px);
+  }
+
+  20% {
+    clip-path: inset(20% 0 60% 0);
+    transform: translateX(5px);
+  }
+
+  40% {
+    clip-path: inset(40% 0 20% 0);
+    transform: translateX(-5px);
+  }
+
+  60% {
+    clip-path: inset(60% 0 40% 0);
+    transform: translateX(5px);
+  }
+
+  80% {
+    clip-path: inset(80% 0 20% 0);
+    transform: translateX(-5px);
+  }
+
+  100% {
+    clip-path: inset(96% 0 2% 0);
+    transform: translateX(5px);
+  }
+}
+
+@keyframes rgb-shift {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(-2%, -1%);
+  }
+
+  100% {
+    transform: translate(2%, 1%);
   }
 }

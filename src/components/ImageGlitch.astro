@@ -1,9 +1,13 @@
 ---
 import "../styles/glitch.scss";
 const { image } = Astro.props;
+const randomSeed = Math.random();
 ---
 
-<div class="glitch" style={`background-image: url('${image}')`}>
+<div
+    class="glitch"
+    style={`--random-seed: ${randomSeed}; background-image: url('${image}');`}
+>
     <div class="channel r"></div>
     <div class="channel g"></div>
     <div class="channel b"></div>

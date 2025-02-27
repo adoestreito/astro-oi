@@ -1,18 +1,22 @@
 ---
-
+import "../styles/glitch.scss";
+const randomSeed = Math.random();
+const { video } = Astro.props;
 ---
 
-<div class="container">
-    <h1>Lo último</h1>
+<div class="glitch">
     <iframe
-        max-width="500"
-        height="500"
-        src="https://www.youtube.com/embed/rOES60IilLA?si=TOxCKagzjEZjE2yi&controls=0&autoplay=1&mute=1"
+        width="300"
+        height="600"
+        src={`https://www.youtube.com/embed/${video}&controls=0&autoplay=1&mute=1`}
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen></iframe>
+    <div class="channel r"></div>
+    <div class="channel g"></div>
+    <div class="channel b"></div>
 </div>
 
 <style>
