@@ -48,7 +48,9 @@ const video2 = "z6lu-hvbqZc?si=cYwEcdVTyQzoOIyQ";
 	<!-- <ImageGlitch image={image1} />
 	<ImageGlitch image={image2} /> -->
 	<h1>Más de Ocaso Ilusión:</h1>
-	<Social />
+	<div class="footer">
+		<Social />
+	</div>
 
 	<style>
 		.grid {
@@ -63,8 +65,8 @@ const video2 = "z6lu-hvbqZc?si=cYwEcdVTyQzoOIyQ";
 		.row {
 			display: flex;
 			flex-direction: row;
-
-			gap: 1rem;
+			align-items: stretch;
+			gap: 0rem;
 			justify-content: space-around;
 			width: 100%;
 		}
@@ -72,14 +74,13 @@ const video2 = "z6lu-hvbqZc?si=cYwEcdVTyQzoOIyQ";
 		.main-element {
 			flex-grow: 3;
 			flex-basis: 0;
-			padding: 0 2rem;
+			padding: 0 1rem;
 		}
 
 		.secondary-element {
-			display: none;
 			flex-grow: 1;
 			flex-basis: 0;
-			align-self: center;
+			padding: 0 1rem;
 		}
 
 		/* Make the grid collapse into a column and ensure everything is centered */
@@ -99,6 +100,11 @@ const video2 = "z6lu-hvbqZc?si=cYwEcdVTyQzoOIyQ";
 		h1 {
 			text-align: center;
 			margin-bottom: 0.5rem;
+			color: white;
+		}
+
+		.footer {
+			padding-bottom: 2rem;
 		}
 	</style>
 </Layout>
