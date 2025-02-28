@@ -80,7 +80,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 100px;
+        height: 3rem;
         margin: 1vh;
     }
 
@@ -91,9 +91,16 @@
     }
 
     .social_icons svg {
-        width: 50px; /* Set a proper width */
-        height: 50px; /* Ensure height is set */
+        width: 3rem; /* Set a proper width */
+        height: 3rem; /* Ensure height is set */
         display: block; /* Prevents extra spacing issues */
+    }
+
+    @media (max-width: 500px) {
+        .social_icons svg {
+            width: 2rem; /* Set a proper width */
+            height: 2rem; /* Ensure height is set */
+        }
     }
 
     a {
