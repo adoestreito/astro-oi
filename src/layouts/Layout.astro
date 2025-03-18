@@ -6,12 +6,6 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Ocaso ilusión</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Stick+No+Bills:wght@200..800&display=swap"
-			rel="stylesheet"
-		/>
 	</head>
 	<body>
 		<div class="container">
@@ -21,6 +15,22 @@
 </html>
 
 <style>
+	@font-face {
+		font-family: "XXII Ultimate-Black-Metal";
+		src: url("XXIIUltimate-Black-Metal.woff2") format("truetype");
+		font-weight: lighter;
+		font-style: normal;
+		font-display: fallback;
+	}
+
+	@font-face {
+		font-family: "primma_handmade_dafont";
+		src: url("PrimmaHandmade.woff2") format("truetype");
+		font-weight: lighter;
+		font-style: normal;
+		font-display: fallback;
+	}
+
 	html,
 	body {
 		margin: 0;
@@ -32,12 +42,9 @@
 		background-position: center;
 		background-repeat: no-repeat;
 		color: #000;
-		font-family: "Stick No Bills", serif;
+		font-family: "primma_handmade_dafont", sans-serif;
 		text-shadow: #d6a397 1px 0 20px;
 		font-weight: lighter;
-	}
-
-	body {
 		display: flex;
 		justify-content: center; /* Centers the content */
 	}
@@ -55,10 +62,10 @@
 		}
 	}
 
-	.stick-no-bills-<uniquifier > {
-		font-family: "Stick No Bills", serif;
-		font-optical-sizing: auto;
-		font-weight: 200;
-		font-style: normal;
+	h1 {
+		text-align: center;
+		margin-bottom: 0.5rem;
+		color: white;
+		font-size: 10rem;
 	}
 </style>
