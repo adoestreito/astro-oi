@@ -45,8 +45,9 @@ import Footer from "../components/Footer.astro";
             <h1>Siguenos/Contacto:</h1>
             <Social />
         </div>
-
-        <Signature />
+        <div class="signature-container">
+            <Signature />
+        </div>
         <Footer />
     </div>
 </Layout>
@@ -89,7 +90,7 @@ import Footer from "../components/Footer.astro";
         height: 50vh;
 
         align-items: stretch;
-        margin: 2rem;
+        margin-bottom: 5rem;
     }
 
     .main {
@@ -120,6 +121,14 @@ import Footer from "../components/Footer.astro";
         color: #000;
     }
 
+    .signature-container {
+        height: 45vh;
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        overflow: hidden; /* Prevents any overflow */
+    }
+
     .altBackgroundColor {
         background-color: #6da098;
         border: solid 3px #6da098;
@@ -130,24 +139,21 @@ import Footer from "../components/Footer.astro";
     }
     /* Responsive */
     @media (max-width: 1024px) {
-        .hero-title {
-            font-size: 10rem;
-        }
     }
 
     @media (max-width: 768px) {
-        .hero-title {
-            font-size: 8rem;
-        }
-
         .secondary {
             display: none;
+        }
+
+        .signature h1 {
+            font-size: 3rem;
         }
     }
 
     @media (max-width: 480px) {
-        .hero-title {
-            font-size: 5rem;
+        .signature h1 {
+            font-size: 3rem;
         }
     }
 </style>
