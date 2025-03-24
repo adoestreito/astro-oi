@@ -1,0 +1,124 @@
+---
+import Welcome from "../components/Welcome.astro";
+import Social from "../components/Social.astro";
+import Banner from "../components/Banner.astro";
+import Hero from "../components/Hero.astro";
+import ImageGlitch from "../components/ImageGlitch.astro";
+import YoutubeShortEmbeded from "../components/YoutubeShortEmbeded.astro";
+import SpotifyEmbeded from "../components/SpotifyEmbeded.astro";
+
+import VideoGlitch from "../components/VideoGlitch.astro";
+import Layout from "../layouts/Layout.astro";
+
+const image1 = "/ocaso-img-1.png";
+const image2 = "/ocaso-img-2.png";
+const imagetest = "/ocaso-img-test.png";
+
+const video1 = "De8X5RvvUBw?start=0";
+const video2 = "z6lu-hvbqZc?si=cYwEcdVTyQzoOIyQ";
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
+	<Banner />
+	<Hero />
+	<div class="social-banner">
+		<Social />
+	</div>
+
+	<div class="grid">
+		<div class="row">
+			<div class="main-element">
+				<YoutubeShortEmbeded />
+			</div>
+			<div class="secondary-element">
+				<VideoGlitch video={video1} />
+			</div>
+		</div>
+		<div class="row">
+			<div class="secondary-element">
+				<VideoGlitch video={video2} />
+			</div>
+			<div class="main-element">
+				<SpotifyEmbeded />
+			</div>
+		</div>
+	</div>
+	<!-- <ImageGlitch image={image1} />
+	<ImageGlitch image={image2} /> -->
+	<h1 class="hero-title">Ocaso Ilusión</h1>
+	<h1>Siguenos en:</h1>
+	<div class="footer">
+		<Social />
+	</div>
+
+	<style>
+		.hero-title {
+			font-family: "XXII Ultimate-Black-Metal";
+		}
+		.grid {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			align-items: stretch;
+			margin-top: 2vh;
+			gap: 1rem; /* Adds spacing between elements */
+		}
+
+		.row {
+			display: flex;
+			flex-direction: row;
+			align-items: stretch;
+			gap: 0rem;
+			justify-content: space-around;
+			width: 100%;
+		}
+
+		.main-element {
+			flex-grow: 3;
+			flex-basis: 0;
+			padding: 0 1rem;
+		}
+
+		.secondary-element {
+			flex-grow: 1;
+			flex-basis: 0;
+			padding: 0 1rem;
+		}
+
+		/* Make the grid collapse into a column and ensure everything is centered */
+		@media (max-width: 768px) {
+			.grid {
+				flex-direction: column;
+				align-items: center; /* Centers child elements */
+				justify-content: center; /* Centers them vertically */
+				width: 100%;
+			}
+
+			.secondary-element {
+				display: none;
+			}
+
+			.social-banner {
+				border-bottom: none;
+			}
+		}
+
+		.footer {
+			padding-bottom: 2rem;
+		}
+
+		.social-banner {
+			border-bottom: #1c1717 solid 1rem;
+		}
+
+		h1 {
+			text-align: center;
+			margin-bottom: 0.5rem;
+			color: white;
+			font-size: 5rem;
+		}
+	</style>
+</Layout>

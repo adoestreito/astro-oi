@@ -1,0 +1,48 @@
+<div class="hero-container">
+    <h1 class="hero-title">Ocaso Ilusión</h1>
+</div>
+
+<style>
+    .hero-container {
+        height: 100%; /* Ensures it fills the parent */
+        width: 100%; /* Ensures full width */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-image: url("sol_back.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .hero-title {
+        align-self: center;
+        font-family: "XXII Ultimate-Black-Metal", sans-serif;
+        font-size: 10rem;
+        font-weight: lighter;
+        color: #d6a397;
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+        text-align: center;
+        white-space: nowrap;
+        margin-bottom: 1rem;
+    }
+
+    @media (max-width: 1024px) {
+        .hero-title {
+            font-size: 10rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .hero-title {
+            font-size: 8rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .hero-title {
+            font-size: 5rem;
+        }
+    }
+</style>

@@ -1,0 +1,52 @@
+<div class="glitch-container">
+    <img src="/img/portada.jpg" class="glitch-img" alt="Glitch Effect" />
+    <img src="/img/portada.jpg" class="glitch-img" alt="Glitch Effect" />
+    <img src="/img/portada.jpg" class="glitch-img" alt="Glitch Effect" />
+</div>
+
+<style>
+    .glitch-container {
+        position: relative;
+        width: 300px; /* Adjust as needed */
+        height: 400px;
+        overflow: hidden;
+    }
+
+    .glitch-img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* RGB Layers for distortion */
+    .glitch-img:nth-child(2) {
+        filter: brightness(1.2) contrast(1.2) hue-rotate(310deg);
+        clip-path: polygon(0 10%, 100% 15%, 100% 60%, 0 55%);
+        opacity: 0.8;
+        animation: glitch-static 1s infinite alternate;
+    }
+
+    .glitch-img:nth-child(3) {
+        filter: brightness(1.2) contrast(1.2) hue-rotate(30deg);
+        clip-path: polygon(0 40%, 100% 45%, 100% 90%, 0 85%);
+        opacity: 0.8;
+        animation: glitch-static 1s infinite alternate-reverse;
+    }
+
+    /* Glitchy distortion effect */
+    @keyframes glitch-static {
+        0% {
+            opacity: 1;
+            filter: brightness(1.2) contrast(1.2) hue-rotate(310deg);
+        }
+        50% {
+            opacity: 0.9;
+            filter: brightness(1.3) contrast(1.3) hue-rotate(330deg);
+        }
+        100% {
+            opacity: 1;
+            filter: brightness(1.2) contrast(1.2) hue-rotate(310deg);
+        }
+    }
+</style>
