@@ -48,10 +48,12 @@ import FaviconAndMeta from "../components/FaviconAndMeta.astro";
 		background-repeat: no-repeat;
 		color: #d6a397;
 		font-family: "primma_handmade_dafont", sans-serif;
-
+		background-image: url("/img/blackmatter.jpg");
 		font-weight: lighter;
 		display: flex;
 		justify-content: center; /* Centers the content */
+		background-attachment: fixed; /* Keeps it fixed when scrolling */
+		margin: 0; /* Removes default body margin */
 	}
 
 	.container {
@@ -59,7 +61,9 @@ import FaviconAndMeta from "../components/FaviconAndMeta.astro";
 		max-width: 1200px; /* Adjust width as needed */
 		width: 90%; /* Ensures it scales down on smaller screens */
 		margin: 0 auto; /* Centers it */
-		border-radius: 1%;
+		box-shadow:
+			-5px 0 10px rgba(255, 255, 255, 0.7),
+			/* Left shadow */ 5px 0 10px rgba(255, 255, 255, 0.7); /* Right shadow */
 	}
 
 	@media (max-width: 768px) {
