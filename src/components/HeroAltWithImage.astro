@@ -1,6 +1,6 @@
 <div class="hero-container">
     <!-- <h1 class="hero-title">Ocaso Ilusión</h1> -->
-    <img class="hero-image" src="/img/ocasoLetrasWeb.png" alt="" />
+    <img class="hero-image" src="/img/ocaso letras web.png" alt="" />
 </div>
 
 <style>
@@ -15,6 +15,7 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
+        box-shadow: 0 5px 10px rgba(255, 255, 255, 0.7); /* Bottom shadow */
     }
 
     .hero-image {
@@ -23,7 +24,7 @@
         margin-top: 10vh;
     }
 
-    .hero-title {
+    /* .hero-title {
         align-self: center;
         font-family: "XXII Ultimate-Black-Metal", sans-serif;
         font-size: 10rem;
@@ -33,11 +34,17 @@
         text-align: center;
         white-space: nowrap;
         margin-bottom: 1rem;
-    }
+    } */
 
+    /* Responsive */
     @media (max-width: 1024px) {
         .hero-title {
             font-size: 10rem;
+        }
+        .hero-image {
+            margin-top: 10vh;
+            height: 40rem;
+            width: auto;
         }
     }
 
@@ -47,7 +54,9 @@
         }
 
         .hero-image {
-            margin-top: 5vh;
+            margin-top: 10vh;
+            height: 40rem;
+            width: auto;
         }
     }
 
@@ -57,7 +66,9 @@
         }
 
         .hero-image {
-            margin-top: 5vh;
+            margin-top: 10vh;
+            height: 25rem;
+            width: auto;
         }
     }
 </style>
