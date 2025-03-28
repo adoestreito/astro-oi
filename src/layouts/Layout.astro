@@ -1,5 +1,6 @@
 ---
 import FaviconAndMeta from "../components/FaviconAndMeta.astro";
+import Analytics from "@vercel/analytics/astro";
 ---
 
 <!doctype html>
@@ -11,6 +12,7 @@ import FaviconAndMeta from "../components/FaviconAndMeta.astro";
 
 		<meta name="generator" content={Astro.generator} />
 		<title>Ocaso ilusión</title>
+		<Analytics />
 	</head>
 	<body>
 		<div class="container">
