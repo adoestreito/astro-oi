@@ -1,0 +1,40 @@
+<nav class="navbar">
+    <ul>
+        <li><h1><a href="">Videos</a></h1></li>
+        <li><h1><a href="">Home</a></h1></li>
+    </ul>
+</nav>
+<style>
+    .navbar {
+        top: 0;
+        height: auto;
+
+        display: flex;
+        justify-content: flex-end;
+        z-index: 1000; /* Ensures it stays above other elements */
+
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    }
+
+    ul {
+        display: flex;
+        justify-content: flex-end;
+    }
+    li {
+        list-style: none;
+        padding: 0 1rem;
+    }
+
+    li h1 {
+        margin: 0;
+    }
+
+    a {
+        text-decoration: none;
+        color: #d6a397;
+    }
+
+    a:hover {
+        color: #406464;
+    }
+</style>
