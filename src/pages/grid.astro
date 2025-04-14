@@ -1,0 +1,161 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Social from "../components/Social.astro";
+import SignatureWithImage from "../components/SignatureWithImage.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout>
+    <div class="container">
+        <Navbar class="navbar" />
+
+        <div class="grid-container">
+            <div class="video-container main">
+                <h1>Umbra (Somber Mix)</h1>
+                <iframe
+                    width="auto"
+                    height="315"
+                    src="https://www.youtube.com/embed/aQ2crqB7jIg?si=FODrqiAUGa7kgyMS"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen></iframe>
+            </div>
+            <div class="video-container secondary">
+                <h1>Umbra</h1>
+                <iframe
+                    width="auto"
+                    height="315"
+                    src="https://www.youtube.com/embed/rOES60IilLA?si=JmsrKcW0Jj8RRi9x"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen></iframe>
+            </div>
+            <div class="video-container main">
+                <h1>Ocaso IlusiÓn</h1>
+                <iframe
+                    width="auto"
+                    height="315"
+                    src="https://www.youtube.com/embed/_fRBEHzDCko?si=j6AE_lXczBfCIb-5"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen></iframe>
+            </div>
+            <div class="video-container secondary">
+                <h1>La TentaciÓn De Mirar Al Sol</h1>
+                <iframe
+                    width="auto"
+                    height="315"
+                    src="https://www.youtube.com/embed/4BWjT-SgYJM?si=TPPc2nhCuJF9IJkH"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen></iframe>
+            </div>
+            <div class="video-container main">
+                <h1>Sail Away</h1>
+                <iframe
+                    width="auto"
+                    height="315"
+                    src="https://www.youtube.com/embed/2BiPiNudr1Y?si=2L4G9VTdlpXPInd9"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen></iframe>
+            </div>
+            <div class="video-container secondary">
+                <h1>La Senda Oscura</h1>
+                <iframe
+                    width="auto"
+                    height="315"
+                    src="https://www.youtube.com/embed/hOkdc8phcBY?si=PcSt3GG-FAbgFlz9"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+        <Social />
+        <div class="signature-container">
+            <SignatureWithImage />
+        </div>
+        <Footer />
+    </div>
+</Layout>
+<style>
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        width: 100%;
+
+        margin: 0;
+    }
+
+    .container {
+        height: 100%;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    .grid-container {
+        width: auto%;
+        display: grid;
+        overflow: hidden;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 1rem;
+        margin: 1rem;
+    }
+
+    .video-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: solid red 3px;
+        width: 100%;
+        padding-bottom: 5rem;
+    }
+
+    .video-container h1 {
+        color: black;
+    }
+
+    .main {
+        background-color: pink;
+        border: solid 3px pink;
+        border-radius: 1%;
+    }
+
+    .secondary {
+        background-color: #6da098;
+        border: solid 3px #6da098;
+        border-radius: 1%;
+    }
+
+    .signature-container {
+        margin-top: 10rem;
+        display: flex;
+        height: 45vh;
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        overflow: hidden; /* Prevents any overflow */
+    }
+</style>

@@ -20,6 +20,7 @@ import Footer from "../components/Footer.astro";
 
 <Layout>
     <div class="container">
+        <Navbar class="navbar" />
         <div class="hero">
             <HeroAltWithImage />
         </div>
@@ -77,6 +78,10 @@ import Footer from "../components/Footer.astro";
         .container {
             height: 100%;
             min-height: 200vh;
+        }
+
+        .navbar {
+            display: none;
         }
 
         .hero {
