@@ -1,69 +1,51 @@
 <!-- <h1 class="signature">Ocaso Ilusión</h1> -->
 <div class="signature">
-    <img class="hero-image" src="/img/ocaso letras web.png" alt="" />
+    <!-- <img class="hero-image" src="/img/ocaso letras web.png" alt="" /> -->
 </div>
 <style>
     .signature {
-        align-self: center;
-        font-family: "XXII Ultimate-Black-Metal", sans-serif;
-        font-size: 10rem;
-        font-weight: lighter;
-        color: #d6a397;
-        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
-        text-align: center;
-        white-space: nowrap;
-        margin-bottom: 1rem;
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+        align-items: center;
+        background-image: url("/img/ocaso letras web.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 100%;
+        width: 100%;
     }
 
     .hero-image {
-        width: 60%;
-        height: auto;
-        margin-top: 30vh;
+        width: auto;
+        height: 1%;
     }
 
     /* Responsive */
     @media (max-width: 1024px) {
-        .hero-title {
-            font-size: 10rem;
-        }
         .hero-image {
-            margin-top: 25vh;
             height: 40rem;
             width: auto;
         }
     }
 
     @media (max-width: 768px) {
-        .hero-title {
-            font-size: 8rem;
-        }
-
         .hero-image {
-            margin-top: 25vh;
             height: 40rem;
             width: auto;
         }
     }
 
     @media (max-width: 480px) {
-        .hero-title {
-            font-size: 5rem;
-        }
-
         .hero-image {
-            margin-top: 10vh;
             height: 25rem;
             width: auto;
         }
     }
 
     @media (max-width: 400px) {
-        .hero-title {
-            font-size: 5rem;
-        }
-
         .hero-image {
-            margin-top: 18vh;
             height: 20rem;
             width: auto;
         }
