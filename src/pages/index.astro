@@ -190,6 +190,7 @@ import Footer from "../components/Footer.astro";
 
         .signature-container {
             display: flex;
+            padding-top: 5rem;
             height: 45vh;
             display: flex;
             justify-content: center; /* Center horizontally */
@@ -231,6 +232,10 @@ import Footer from "../components/Footer.astro";
             .social-container {
                 margin: 0 2rem;
             }
+
+            .signature-container {
+                padding-top: 0rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -245,10 +250,8 @@ import Footer from "../components/Footer.astro";
             .social-container {
                 margin: 0 2rem;
             }
-
             .signature-container {
-                margin-top: 10vh;
-                height: 30vh;
+                padding-top: 0rem;
             }
         }
     </style>
