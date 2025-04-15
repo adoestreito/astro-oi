@@ -63,7 +63,7 @@ import Footer from "../components/Footer.astro";
             </h1>
             <Social />
         </div>
-        <div class="signature-container fade-in">
+        <div class="signature-container blur-in">
             <SignatureWithImage />
         </div>
         <Footer />
@@ -287,6 +287,8 @@ import Footer from "../components/Footer.astro";
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add("visible");
+                } else {
+                    entry.target.classList.remove("visible");
                 }
             });
         });

@@ -10,12 +10,13 @@ import Footer from "../components/Footer.astro";
     <div class="container">
         <Navbar class="navbar" />
 
-        <div class="grid-container">
-            <div class="video-container main">
-                <h1>Umbra (Somber Mix)</h1>
+        <div class="grid-container blur-in">
+            <div class="video-container main blur-in">
+                <h1>Umbra (Somber Remix)</h1>
                 <iframe
-                    width="auto"
-                    height="315"
+                    style="border-radius:12px"
+                    width="90%"
+                    height="500"
                     src="https://www.youtube.com/embed/aQ2crqB7jIg?si=FODrqiAUGa7kgyMS"
                     title="YouTube video player"
                     frameborder="0"
@@ -23,11 +24,12 @@ import Footer from "../components/Footer.astro";
                     referrerpolicy="strict-origin-when-cross-origin"
                     allowfullscreen></iframe>
             </div>
-            <div class="video-container secondary">
+            <div class="video-container secondary blur-in">
                 <h1>Umbra</h1>
                 <iframe
-                    width="auto"
-                    height="315"
+                    style="border-radius:12px"
+                    width="90%"
+                    height="500"
                     src="https://www.youtube.com/embed/rOES60IilLA?si=JmsrKcW0Jj8RRi9x"
                     title="YouTube video player"
                     frameborder="0"
@@ -35,48 +37,13 @@ import Footer from "../components/Footer.astro";
                     referrerpolicy="strict-origin-when-cross-origin"
                     allowfullscreen></iframe>
             </div>
-            <div class="video-container main">
+            <div class="video-container main blur-in">
                 <h1>Ocaso IlusiÓn</h1>
                 <iframe
-                    width="auto"
-                    height="315"
-                    src="https://www.youtube.com/embed/_fRBEHzDCko?si=j6AE_lXczBfCIb-5"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen></iframe>
-            </div>
-            <div class="video-container secondary">
-                <h1>La TentaciÓn De Mirar Al Sol</h1>
-                <iframe
-                    width="auto"
-                    height="315"
-                    src="https://www.youtube.com/embed/4BWjT-SgYJM?si=TPPc2nhCuJF9IJkH"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen></iframe>
-            </div>
-            <div class="video-container main">
-                <h1>Sail Away</h1>
-                <iframe
-                    width="auto"
-                    height="315"
-                    src="https://www.youtube.com/embed/2BiPiNudr1Y?si=2L4G9VTdlpXPInd9"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen></iframe>
-            </div>
-            <div class="video-container secondary">
-                <h1>La Senda Oscura</h1>
-                <iframe
-                    width="auto"
-                    height="315"
-                    src="https://www.youtube.com/embed/hOkdc8phcBY?si=PcSt3GG-FAbgFlz9"
+                    style="border-radius:12px"
+                    width="90%"
+                    height="500"
+                    src="https://www.youtube.com/embed/32I43GZR9kU?si=PfRIXoEur5gyO4SW"
                     title="YouTube video player"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -84,8 +51,11 @@ import Footer from "../components/Footer.astro";
                     allowfullscreen></iframe>
             </div>
         </div>
-        <Social />
-        <div class="signature-container">
+        <div class="social-container blur-in">
+            <Social />
+        </div>
+
+        <div class="signature-container blur-in">
             <SignatureWithImage />
         </div>
         <Footer />
@@ -117,8 +87,8 @@ import Footer from "../components/Footer.astro";
         width: auto%;
         display: grid;
         overflow: hidden;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(3, 1fr);
         gap: 1rem;
         margin: 1rem;
     }
@@ -158,4 +128,46 @@ import Footer from "../components/Footer.astro";
         align-items: center; /* Center vertically */
         overflow: hidden; /* Prevents any overflow */
     }
+
+    /* Animation */
+    .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+            opacity 3s ease-out,
+            transform 0.6s ease-out;
+    }
+
+    .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .blur-in {
+        filter: blur(10px);
+        opacity: 0;
+        transition:
+            filter 0.6s ease-out,
+            opacity 0.6s ease-out;
+    }
+
+    .blur-in.visible {
+        filter: blur(0);
+        opacity: 1;
+    }
 </style>
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+            } else {
+                entry.target.classList.remove("visible");
+            }
+        });
+    });
+
+    document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el));
+
+    document.querySelectorAll(".blur-in").forEach((el) => observer.observe(el));
+</script>
