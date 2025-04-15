@@ -20,50 +20,50 @@ import Footer from "../components/Footer.astro";
 
 <Layout>
     <div class="container">
-        <Navbar class="navbar" />
-        <div class="hero">
+        <Navbar class="navbar blur-in" />
+        <div class="hero blur-in">
             <HeroAltWithImage />
         </div>
-        <div class="social">
+        <div class="social blur-in">
             <Social />
         </div>
         <div class="grid">
             <div class="row">
-                <div class="main">
+                <div class="main blur-in">
                     <h1>Lo último</h1>
                     <YoutubeShortEmbeded />
                 </div>
-                <div class="secondary">
+                <div class="secondary fade-in">
                     <ImageGlitchAlt2 />
                 </div>
             </div>
             <div class="row">
-                <div class="secondary altBorderColor">
+                <div class="secondary altBorderColor fade-in">
                     <ImageGlitchAlt />
                 </div>
-                <div class="main altBackgroundColor">
+                <div class="main altBackgroundColor blur-in">
                     <h1>Escucha</h1>
                     <SpotifyEmbeded />
                 </div>
             </div>
             <div class="row-text">
-                <div class="main-text">
+                <div class="main-text blur-in">
                     <h1>Bio</h1>
                     <TextBlock />
                 </div>
-                <div class="secondary-text">
+                <div class="secondary-text fade-in">
                     <ImageGlitchAlt3 />
                 </div>
             </div>
         </div>
-        <div class="social-container">
+        <div class="social-container blur-in">
             <h1>
                 Para estar mÁs conectado con el dÍa a dÍa de Ocaso IlusiÓn,
                 sÍguenos en las redes sociales:
             </h1>
             <Social />
         </div>
-        <div class="signature-container">
+        <div class="signature-container fade-in">
             <SignatureWithImage />
         </div>
         <Footer />
@@ -255,5 +255,48 @@ import Footer from "../components/Footer.astro";
                 padding-top: 0rem;
             }
         }
+        /* Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition:
+                opacity 3s ease-out,
+                transform 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .blur-in {
+            filter: blur(10px);
+            opacity: 0;
+            transition:
+                filter 0.6s ease-out,
+                opacity 0.6s ease-out;
+        }
+
+        .blur-in.visible {
+            filter: blur(0);
+            opacity: 1;
+        }
     </style>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                }
+            });
+        });
+
+        document
+            .querySelectorAll(".fade-in")
+            .forEach((el) => observer.observe(el));
+
+        document
+            .querySelectorAll(".blur-in")
+            .forEach((el) => observer.observe(el));
+    </script>
 </Layout>
