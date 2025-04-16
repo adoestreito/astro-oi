@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
+import HeroAltWithImage from "../components/HeroAltWithImage.astro";
 import Social from "../components/Social.astro";
 import SignatureWithImage from "../components/SignatureWithImage.astro";
 import Footer from "../components/Footer.astro";
@@ -9,11 +10,18 @@ import Footer from "../components/Footer.astro";
 <Layout>
     <div class="container">
         <Navbar class="navbar" />
+        <div class="hero blur-in">
+            <HeroAltWithImage />
+        </div>
+        <div class="social-container blur-in">
+            <Social />
+        </div>
 
         <div class="grid-container blur-in">
             <div class="video-container main blur-in">
                 <h1>Umbra (Somber Remix)</h1>
                 <iframe
+                    class="glow"
                     style="border-radius:12px"
                     width="90%"
                     height="500"
@@ -27,6 +35,7 @@ import Footer from "../components/Footer.astro";
             <div class="video-container secondary blur-in">
                 <h1>Umbra</h1>
                 <iframe
+                    class="glow"
                     style="border-radius:12px"
                     width="90%"
                     height="500"
@@ -40,6 +49,7 @@ import Footer from "../components/Footer.astro";
             <div class="video-container main blur-in">
                 <h1>Ocaso IlusiÓn</h1>
                 <iframe
+                    class="glow"
                     style="border-radius:12px"
                     width="90%"
                     height="500"
@@ -52,6 +62,10 @@ import Footer from "../components/Footer.astro";
             </div>
         </div>
         <div class="social-container blur-in">
+            <h1>
+                Para estar mÁs conectado con el dÍa a dÍa de Ocaso IlusiÓn,
+                sÍguenos en las redes sociales:
+            </h1>
             <Social />
         </div>
 
@@ -81,6 +95,14 @@ import Footer from "../components/Footer.astro";
 
     .navbar {
         display: none;
+    }
+
+    .hero {
+        height: 40vh;
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        overflow: hidden; /* Prevents any overflow */
     }
 
     .grid-container {
@@ -119,6 +141,14 @@ import Footer from "../components/Footer.astro";
         border-radius: 1%;
     }
 
+    .social-container {
+        margin-top: 5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #d6a397;
+    }
+
     .signature-container {
         margin-top: 10rem;
         display: flex;
@@ -127,6 +157,28 @@ import Footer from "../components/Footer.astro";
         justify-content: center; /* Center horizontally */
         align-items: center; /* Center vertically */
         overflow: hidden; /* Prevents any overflow */
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+    }
+
+    @media (max-width: 1180px) {
+        .social-container {
+            margin: 0 2rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .social-container {
+            margin: 0 2rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .social-container {
+            margin: 0 2rem;
+        }
     }
 
     /* Animation */
@@ -154,6 +206,24 @@ import Footer from "../components/Footer.astro";
     .blur-in.visible {
         filter: blur(0);
         opacity: 1;
+    }
+
+    .glow {
+        animation: glow 1.5s infinite alternate;
+        color: white;
+    }
+
+    @keyframes glow {
+        from {
+            box-shadow:
+                0 0 5px white,
+                0 0 10px #white;
+        }
+        to {
+            box-shadow:
+                0 0 20px black,
+                0 0 30px black;
+        }
     }
 </style>
 <script>
