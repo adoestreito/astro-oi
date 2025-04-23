@@ -2,6 +2,7 @@
 import FaviconAndMeta from "../components/FaviconAndMeta.astro";
 import Analytics from "@vercel/analytics/astro";
 const currentUrl = Astro.url.href;
+const imageUrl = `${Astro.url.origin}/hero.png`;
 ---
 
 <!doctype html>
@@ -35,7 +36,7 @@ const currentUrl = Astro.url.href;
 		/>
 
 		<!-- Image shown in the preview -->
-		<meta property="og:image" content="https://ocasoilusion.com/hero.png" />
+		<meta property="og:image" content={imageUrl} />
 
 		<!-- The page URL -->
 		<meta property="og:url" content={currentUrl} />
