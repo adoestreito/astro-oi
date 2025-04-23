@@ -1,3 +1,8 @@
+---
+const currentUrl = Astro.url.href;
+const imageUrl = `${Astro.url.origin}/hero.png`;
+---
+
 <link
     rel="apple-touch-icon"
     sizes="57x57"
@@ -80,3 +85,23 @@
     content="ocaso ilusion, music, band, black metal, upcoming album"
 />
 <meta name="robots" content="index, follow" />
+
+<meta name="generator" content={Astro.generator} />
+<!-- This meta og tags are for sharing info -->
+<!-- Title shown in the preview -->
+<meta property="og:title" content="Ocaso Ilusión - Sitio Oficial" />
+
+<!-- Description shown below the title -->
+<meta
+    property="og:description"
+    content="Ocaso Ilusión: Álbum debut disponible ya. Escucha, comparte y disfruta"
+/>
+
+<!-- Image shown in the preview -->
+<meta property="og:image" content={imageUrl} />
+
+<!-- The page URL -->
+<meta property="og:url" content={currentUrl} />
+
+<!-- Optional: Specify the type of content -->
+<meta property="og:type" content="website" />
