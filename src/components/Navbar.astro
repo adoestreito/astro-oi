@@ -1,7 +1,7 @@
 <nav class="navbar">
     <ul>
-        <li><h1><a href="/videos">VÍdeos</a></h1></li>
-        <li><h1><a href="/">Home</a></h1></li>
+        <li><h1><a class="zoom-text" href="/videos">VÍdeos</a></h1></li>
+        <li><h1><a class="zoom-text" href="/">Home</a></h1></li>
     </ul>
 </nav>
 <style>
@@ -36,5 +36,14 @@
 
     a:hover {
         color: #406464;
+    }
+
+    .zoom-text {
+        display: inline-block;
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .zoom-text:hover {
+        transform: scale(1.1);
     }
 </style>

@@ -4,7 +4,14 @@
 
 <div class="social_container">
     <div class="social_icons">
-        <a href="https://www.instagram.com/ocasoilusion/reels/"
+        <a
+            class="zoom-text"
+            href="
+            https:
+            www.instagram.com
+            ocasoilusion
+            reels
+            "
             ><svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -23,7 +30,9 @@
                 ></line></svg
             ></a
         >
-        <a href="https://open.spotify.com/artist/5xQwrXYgZwuZyTev2hO9fF"
+        <a
+            class="zoom-text"
+            href="https://open.spotify.com/artist/5xQwrXYgZwuZyTev2hO9fF"
             ><svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -35,7 +44,7 @@
                 ></path></svg
             ></a
         >
-        <a href="https://www.tiktok.com/@ocaso.ilusion"
+        <a class="zoom-text" href="https://www.tiktok.com/@ocaso.ilusion"
             ><svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -45,7 +54,7 @@
                 ></path></svg
             ></a
         >
-        <a href="https://www.youtube.com/@OcasoIlusion"
+        <a class="zoom-text" href="https://www.youtube.com/@OcasoIlusion"
             ><svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -55,7 +64,7 @@
                 ></path></svg
             ></a
         >
-        <a class="hidden" href="mailto:admin@ocasoilusion.com"
+        <a class="zoom-text" class="hidden" href="mailto:admin@ocasoilusion.com"
             ><svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -123,6 +132,16 @@
 
     a:hover {
         color: #406464;
+    }
+
+    .zoom-text {
+        display: inline-block;
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .zoom-text:hover,
+    .zoom-text:active {
+        transform: scale(1.1);
     }
 
     /* .hidden {
