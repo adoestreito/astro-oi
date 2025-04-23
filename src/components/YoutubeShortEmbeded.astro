@@ -5,6 +5,7 @@
 <div class="container">
     <h1>Lo último</h1>
     <iframe
+        class="glow"
         max-width="500"
         height="500"
         src="https://www.youtube.com/embed/aQ2crqB7jIg?si=pfDGM2LoOuEtqIyp&controls=1&autoplay=1&mute=1"
@@ -28,5 +29,23 @@
         margin-bottom: 0.5rem;
         color: white;
         font-size: 3rem;
+    }
+
+    .glow {
+        animation: glow 1.5s infinite alternate;
+        color: white;
+    }
+
+    @keyframes glow {
+        from {
+            box-shadow:
+                0 0 5px white,
+                0 0 10px #white;
+        }
+        to {
+            box-shadow:
+                0 0 20px black,
+                0 0 30px black;
+        }
     }
 </style>

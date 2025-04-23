@@ -3,6 +3,7 @@
 ---
 
 <iframe
+    class="glow"
     style="border-radius:12px"
     src="https://open.spotify.com/embed/artist/5xQwrXYgZwuZyTev2hO9fF?utm_source=generator&theme=0"
     frameBorder="
@@ -15,5 +16,23 @@
     iframe {
         width: 100%;
         height: 100%;
+    }
+
+    .glow {
+        animation: glow 1.5s infinite alternate;
+        color: white;
+    }
+
+    @keyframes glow {
+        from {
+            box-shadow:
+                0 0 5px white,
+                0 0 10px #white;
+        }
+        to {
+            box-shadow:
+                0 0 20px black,
+                0 0 30px black;
+        }
     }
 </style>
