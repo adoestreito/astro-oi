@@ -1,6 +1,7 @@
 ---
 import FaviconAndMeta from "../components/FaviconAndMeta.astro";
 import Analytics from "@vercel/analytics/astro";
+const currentUrl = Astro.url.href;
 ---
 
 <!doctype html>
@@ -9,9 +10,39 @@ import Analytics from "@vercel/analytics/astro";
 		<FaviconAndMeta />
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
+		<title>Ocaso Ilusión - Sitio Oficial</title>
+		<meta charset="UTF-8" />
+		<meta name="author" content="Ocaso Ilusion" />
+		<meta
+			name="description"
+			content="Ocaso Ilusión: Álbum debut disponible ya."
+		/>
+		<meta
+			name="keywords"
+			content="ocaso ilusion, music, band, black metal, upcoming album"
+		/>
+		<meta name="robots" content="index, follow" />
 
 		<meta name="generator" content={Astro.generator} />
-		<title>Ocaso ilusión</title>
+		<!-- This meta og tags are for sharing info -->
+		<!-- Title shown in the preview -->
+		<meta property="og:title" content="Ocaso Ilusión - Sitio Oficial" />
+
+		<!-- Description shown below the title -->
+		<meta
+			property="og:description"
+			content="Ocaso Ilusión: Álbum debut disponible ya. Escucha, comparte y disfruta"
+		/>
+
+		<!-- Image shown in the preview -->
+		<meta property="og:image" content="https://ocasoilusion.com/hero.png" />
+
+		<!-- The page URL -->
+		<meta property="og:url" content={currentUrl} />
+
+		<!-- Optional: Specify the type of content -->
+		<meta property="og:type" content="website" />
+
 		<Analytics />
 	</head>
 	<body>
