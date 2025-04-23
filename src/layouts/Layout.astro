@@ -38,13 +38,28 @@ import Analytics from "@vercel/analytics/astro";
 		font-display: fallback;
 	}
 
+	@font-face {
+		font-family: "spaceship";
+		src: url("/spaceship2100.ttf") format("truetype");
+		font-weight: lighter;
+		font-style: normal;
+		font-display: fallback;
+	}
+	@font-face {
+		font-family: "noticia";
+		src: url("/Noticia-Bold.otf") format("truetype");
+		font-weight: lighter;
+		font-style: normal;
+		font-display: fallback;
+	}
+
 	html,
 	body {
 		margin: 0;
 		padding: 0;
 		box-sizing: border-box;
 		/* background-image: url("../assets/umbra_bg.png"); */
-		background-color: #d6a397;
+		background-color: #e8baba;
 		background-size: cover; /* Ensures the image covers the entire screen */
 		background-position: center;
 		background-repeat: no-repeat;
